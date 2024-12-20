@@ -57,6 +57,7 @@
 </aside>
 
 <main>
+    <div id="banner" th:replace="~{page-banner :: message}"></div>
     <sl-spinner id="indicator" class="htmx-indicator"></sl-spinner>
     <div id="content" th:replace="${content}"></div>
 </main>
