@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{layout :: layout(~{::content})}" xmlns:th="https://www.thymeleaf.org"
+      xmlns:hx="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+
+<div th:fragment="content" id="content" data-menu="/view/product/create">
+
+    <sl-breadcrumb>
+        <sl-breadcrumb-item>
+            <sl-icon slot="prefix" name="product"></sl-icon>
+            Product Management
+        </sl-breadcrumb-item>
+        <sl-breadcrumb-item>Add Product</sl-breadcrumb-item>
+    </sl-breadcrumb>
+
+    <form th:action="@{/}" method="post" hx-post="/add/product">
+
+        <div class="report-form">
+            <sl-input class="label-on-left" name="title" th:value="${title}"
+                      label="Product Title"></sl-input>
+
+            <sl-input class="label-on-left" name="handle" th:value="${handle}"
+                      label="Product Handle"></sl-input>
+            <sl-input class="label-on-left" type="date" id="publishedAt" name="publishedAt" th:value="${publishedAt}" label="Published Date"></sl-input>
+
+            <sl-input class="label-on-left" name="vendor" th:value="${vendor}"
+                      label="Vendor"></sl-input>
+
+            <sl-input class="label-on-left" name="productType" th:value="${productType}"
+                      label="Product type"></sl-input>
+        </div>
+
+        <sl-button variant="primary" type="submit")>Add</sl-button>
+    </form>
+</div>
+
+</body>
+</html>
